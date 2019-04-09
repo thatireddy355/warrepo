@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('checkout') { 
             steps {
-            git 'https://github.com/jawajiwar/vetinary-care-solutions.git' 
+            git 'https://github.com/cjpcloud/warrepo.git' 
             }
         }
         stage('Build') { 

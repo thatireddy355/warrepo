@@ -18,16 +18,5 @@
   <build>
     <finalName>CounterWebApp</finalName>
   </build>
-  <distributionManagement>
-    <repository>
-      <id>testjob</id>
-      <name>releases</name>
-      <url>http://18.221.14.184:8080/nexus-latest/content/repositories/releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>testjob</id>
-      <name>snapshots</name>
-      <url>http://18.221.14.184:8080/nexus-latest/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement> 
+
 </project>

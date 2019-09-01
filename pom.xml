@@ -22,12 +22,12 @@
     <repository>
       <id>testjob</id>
       <name>releases</name>
-      <url>http://18.221.14.184:8080/nexus-latest/content/repositories/releases/</url>
+      <url>http://54.166.212.43:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>testjob</id>
       <name>snapshots</name>
-      <url>http://18.221.14.184:8080/nexus-latest/content/repositories/snapshots/</url>
+      <url>http://54.166.212.43:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement> 
 </project>

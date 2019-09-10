@@ -1,5 +1,9 @@
 ---
-- hosts: localhost
+- hosts: dev
+  gather_facts: no
+  vars:
+    src_path: "/var/lib/jenkins/workspace/demooo/target/CounterWebApp.war"
+    des_path: "/root/"
   tasks:
-     - name: printing sample
-       shell: echo the programe is executed
+  - name: Ansible copy files remote to remote
+    shell: 'cp -r {{ src_path }}/. {{ des_path }}'

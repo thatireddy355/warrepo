@@ -2,9 +2,9 @@
 - hosts: dev
   gather_facts: no
   vars:
-    src_path: "/var/lib/jenkins/workspace/demooo/target/CounterWebApp.war"
+    src_path: "/var/lib/jenkins/workspace/demooo/target"
     des_path: "/root/"
   tasks:
   - name: Ansible copy files remote to remote
-    shell: 'cp -r {{ src_path }}/. {{ des_path }}'
+    shell: 'cp -r {{ src_path }}/CounterWebApp.war {{ des_path }}'
 

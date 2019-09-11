@@ -29,4 +29,4 @@
   
    
    - name: start apache-tomcat-8.5.45/
-     command: /home/ec2-user/tomcat/apache-tomcat-8.5.45/bin/startup.sh
+     command: sh /home/ec2-user/tomcat/apache-tomcat-8.5.45/bin/startup.sh

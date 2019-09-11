@@ -1,12 +1,5 @@
 ---
--
-  hosts: dev
-  tasks:
-    - name: ansible create directory example
-      file:
-        path: /root/devops_directory
-        state: directory
-    - name: ansible create directory example
-      file:
-        path: /root/devops_directory/vivek.txt
-        state: touch
+ - hosts: dev
+   tasks:
+     - name: Copy the file from master to mwiapp02
+       copy: src=/var/lib/jenkins/workspace/demooo/target/CounterWebApp.war dest=/root

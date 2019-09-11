@@ -1,10 +1,12 @@
 ---
-- hosts: dev
-  gather_facts: no
-  vars:
-    src_path: "/var/lib/jenkins/workspace/demooo/target"
-    des_path: "/root/"
+-
+  hosts: dev
   tasks:
-  - name: Ansible copy files remote to remote
-    shell: 'cp -r {{ src_path }}/CounterWebApp.war {{ des_path }}'
-
+    - name: ansible create directory example
+      file:
+        path: /root/devops_directory
+        state: directory
+    - name: ansible create directory example
+      file:
+        path: /root/devops_directory/vivek.txt
+        state: touch

@@ -1,5 +1,32 @@
 ---
- - hosts: dev
-   tasks:
-     - name: Copy the file from master to mwiapp02
-       copy: src=/var/lib/jenkins/workspace/demooo/target/CounterWebApp.war dest=/root
+- hosts: testing
+  tasks:
+   - name: Download Java
+     command: sudo yum install java-1.8.0-openjdk -y
+
+   - name: Unpack archive
+     command: sudo yum install java-1.8.0-openjdk-devel -y
+
+   - name: check java version
+     command: java -version
+
+   - name: Create Folder
+     file:
+      path: /home/ec2-user/tomcat
+      state: directory
+      mode: 0755
+      owner: ec2-user
+      group: ec2-user
+
+   - name: Download Tomcat
+     get_url: url=http://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.45/bin/apache-tomcat-8.5.45.tar.gz dest=/home/ec2-user/tomcat
+
+   - name: Extract archive
+     unarchive: src=/home/ec2-user/tomcat/apache-tomcat-8.5.45.tar.gz dest=/home/ec2-user/tomcat remote_src=yes
+
+   - name: deploying the application
+     copy: src=/var/lib/jenkins/workspace/demooo/target/CounterWebApp.war dest=/home/ec2-user/tomcat/apache-tomcat-8.5.45/webapps/
+  
+   
+   - name: start apache-tomcat-8.5.45/
+     command: /home/ec2-user/tomcat/apache-tomcat-8.5.45/bin/startup.sh

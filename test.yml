@@ -14,7 +14,7 @@
      file:
       path: /home/ec2-user/tomcat
       state: directory
-      mode: 0755
+      mode: 0777
       owner: ec2-user
       group: ec2-user
 

@@ -13,7 +13,7 @@ if [ -f "$CSV_FILE" ];
                                           LAST_COLUMN_EMPTY=$(awk -F "," '{ print $3}' $CSV_FILE  | grep -c '^$')
                                           FIRST_COLUMN_EMPTY=$(awk -F "," '{ print $1}' $CSV_FILE | grep -c '^$')
 
-                                  if  [ "$FIRST_COLUMN_EMPTY" -eq "0" && "$MIDDLE_COLUMN_EMPTY" -eq "0" && "$LAST_COLUMN_EMPTY" -eq "0" ];
+                                  if  [[ "$FIRST_COLUMN_EMPTY" -eq "0" && "$MIDDLE_COLUMN_EMPTY" -eq "0" && "$LAST_COLUMN_EMPTY" -eq "0" ]];
                                         then
                                            echo "The Values are properly put in place"
                                    else
